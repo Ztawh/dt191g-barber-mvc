@@ -21,8 +21,16 @@ namespace barber_mvc.Controllers
         }
 
         // GET: Customer
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            var customers = from m in _context.Customer
+                select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                customers = customers.Where(s => s.CustomerName!.ToLower().Contains(searchString.ToLower()));
+                return View(await customers.ToListAsync());
+            }
             return View(await _context.Customer.ToListAsync());
         }
 

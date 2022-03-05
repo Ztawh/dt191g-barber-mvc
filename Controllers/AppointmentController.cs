@@ -60,9 +60,9 @@ namespace barber_mvc.Controllers
         // GET: Appointment/Create
         public IActionResult Create()
         {
-            ViewData["BarberId"] = new SelectList(_context.Barber, "BarberId", "BarberId");
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
-            ViewData["ServiceId"] = new SelectList(_context.Service, "ServiceId", "ServiceId");
+            ViewData["BarberId"] = new SelectList(_context.Barber, "BarberId", "BarberName");
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerName");
+            ViewData["ServiceId"] = new SelectList(_context.Service, "ServiceId", "ServiceName");
             return View();
         }
 
@@ -79,9 +79,9 @@ namespace barber_mvc.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BarberId"] = new SelectList(_context.Barber, "BarberId", "BarberId", appointment.BarberId);
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId", appointment.CustomerId);
-            ViewData["ServiceId"] = new SelectList(_context.Service, "ServiceId", "ServiceId", appointment.ServiceId);
+            ViewData["BarberId"] = new SelectList(_context.Barber, "BarberId", "BarberName", appointment.BarberId);
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerName", appointment.CustomerId);
+            ViewData["ServiceId"] = new SelectList(_context.Service, "ServiceId", "ServiceName", appointment.ServiceId);
             return View(appointment);
         }
 
