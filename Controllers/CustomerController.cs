@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using barber_mvc.Data;
 using barber_mvc.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace barber_mvc.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         private readonly ApplicationDbContext _context;
