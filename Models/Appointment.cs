@@ -10,10 +10,7 @@ public class Appointment
     [Display(Name = "Datum och tid")]
     [Required(ErrorMessage = "Välj datum och tid")]
     public DateTime DateAndTime { get; set; }
-    
-    //Tid
-    //time 09:00
-    
+
     // Relationer
     [Display(Name = "Barberare")]
     [Required(ErrorMessage = "Ange en barberare")]

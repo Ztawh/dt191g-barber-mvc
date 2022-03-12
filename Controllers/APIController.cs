@@ -33,10 +33,9 @@ namespace barber_mvc.Controllers
         }
         
         [HttpGet]
-        [Route("/API/AvailableAppointments/{add?}")]
-        public async Task<List<DateTime>> GetAvailableAppointments(int add)
+        [Route("/API/AvailableAppointments/{add?}/{barber?}")]
+        public async Task<List<DateTime>> GetAvailableAppointments(int add, int barber)
         {
-            
             var dateStart = DateTime.Now;
             var dateEnd = dateStart.AddDays(7);
 
@@ -47,9 +46,9 @@ namespace barber_mvc.Controllers
             }
             
             var times = new List<DateTime>();
-            
+
             var unavailable = await _context.Appointment.Where(appointment =>
-                appointment.DateAndTime > dateStart && appointment.DateAndTime < dateEnd).ToListAsync();
+                appointment.DateAndTime > dateStart && appointment.DateAndTime < dateEnd && appointment.BarberId == barber).ToListAsync();
 
             for (int i = 0; i < 7; i++)
             {
@@ -60,16 +59,22 @@ namespace barber_mvc.Controllers
                 {
                     var dateAndTime = DateTime.Parse($"{day.Year}-{day.Month:00}-{day.Day:00}T{j:00}:00");
 
-                    foreach (var appointment in unavailable)
+                    // Om det finns bokade tider
+                    if (unavailable.Count > 0)
                     {
-                        //var unavailableTime = DateTime.Parse($"{appointment.DateAndTime.Year}-{appointment.DateAndTime.Month:00}-{appointment.DateAndTime.Day:00}T{j:00}");
-                        if (appointment.DateAndTime != dateAndTime)
+                        foreach (var appointment in unavailable)
                         {
-                            times.Add(dateAndTime);
+                            // Sortera bort unavailable tider, lägg till allt som inte är unavailable i times
+                            if (appointment.DateAndTime != dateAndTime)
+                            {
+                                times.Add(dateAndTime);
+                            }
                         }
                     }
-                    
-                    // Sortera bort unavailable tider, lägg till allt som inte är unavailable i times
+                    else // Lägg till alla tider
+                    {
+                        times.Add(dateAndTime);
+                    }
                 }
             }
             return times;
