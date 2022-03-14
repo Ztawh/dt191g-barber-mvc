@@ -28,8 +28,10 @@ namespace barber_mvc.Controllers
             // await _context.Barber.ToListAsync();
             // await _context.Customer.ToListAsync();
             // await _context.Service.ToListAsync();
+
+            var dateToday = DateTime.Now;
             
-            var applicationDbContext = _context.Appointment.Include(a => a.Barber).Include(a => a.Customer).Include(a => a.Service);
+            var applicationDbContext = _context.Appointment.Include(a => a.Barber).Include(a => a.Customer).Include(a => a.Service).Where(a => a.DateAndTime >= dateToday).OrderBy(a => a.DateAndTime);
             // var data = await applicationDbContext.ToListAsync();
             //
             // return View(data);

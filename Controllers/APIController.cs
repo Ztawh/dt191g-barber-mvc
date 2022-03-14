@@ -93,7 +93,6 @@ namespace barber_mvc.Controllers
         [Route("/API/Appointment")]
         public async Task<ActionResult<Appointment>> PostAppointment(Appointment appointment)
         {
-            // Finns tiden redan bokad? Då får du inte boka
             _context.Appointment.Add(appointment);
             await _context.SaveChangesAsync();
             return CreatedAtAction("PostAppointment", appointment);
@@ -112,6 +111,16 @@ namespace barber_mvc.Controllers
         public async Task<List<Customer>> GetCustomer(int id)
         {
             return await _context.Customer.ToListAsync();
+        }
+        
+        // POST Customer
+        [HttpPost]
+        [Route("/API/Customer")]
+        public async Task<ActionResult<Customer>>  PostCustomer(Customer customer)
+        {
+            _context.Customer.Add(customer);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction("PostCustomer", customer);
         }
         
         // GET: API/Barber
