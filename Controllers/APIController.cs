@@ -62,13 +62,22 @@ namespace barber_mvc.Controllers
                     // Om det finns bokade tider
                     if (unavailable.Count > 0)
                     {
+                        bool found = false;
                         foreach (var appointment in unavailable)
                         {
-                            // Sortera bort unavailable tider, lägg till allt som inte är unavailable i times
-                            if (appointment.DateAndTime != dateAndTime)
+                            // Finns datumet i bokade tider?
+                            if (appointment.DateAndTime == dateAndTime)
                             {
-                                times.Add(dateAndTime);
+                                found = true;
+                                break;
+                                // times.Add(dateAndTime);
                             }
+                        }
+                        
+                        // Om den fanns 
+                        if (!found)
+                        {
+                            times.Add(dateAndTime);
                         }
                     }
                     else // Lägg till alla tider
