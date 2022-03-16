@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - barber_mvc</title>
+    <title>@ViewData["Title"] - Barberar'n</title>
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/> *@
     @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/> *@
     <link rel="stylesheet" href="~/css/style.css"/>
@@ -19,21 +19,6 @@
     <nav class="user-nav">
         @if (SignInManager.IsSignedIn(User))
         {
-        @*     <ul> *@
-        @*         <li> *@
-        @*             <a asp-area="" asp-controller="Customer" asp-action="Index">Kunder</a> *@
-        @*         </li> *@
-        @*         <li> *@
-        @*             <a asp-area="" asp-controller="Barber" asp-action="Index">Barberare</a> *@
-        @*         </li> *@
-        @*         <li> *@
-        @*             <a asp-area="" asp-controller="Appointment" asp-action="Index">Bokade tider</a> *@
-        @*         </li> *@
-        @*         <li> *@
-        @*             <a asp-area="" asp-controller="Service" asp-action="Index">Tjänster</a> *@
-        @*         </li> *@
-        @*          *@
-        @*     </ul> *@
             <partial name="_LoginPartial"/>
         }
     </nav>

@@ -31,7 +31,7 @@ h2, h3, h4 {
 main {
   min-height: 80vh;
   margin: auto;
-  padding: 3rem 0.5rem;
+  padding: 2rem 0.5rem;
 }
 @media screen and (min-width: 800px) {
   main {
@@ -230,15 +230,15 @@ table tr td:last-child {
   margin-left: 0.5rem;
 }
 
-.edit-form .btn {
+.edit-form .btn, .create-form .btn {
   margin-top: 1rem;
 }
 
-.details-list dt {
+.details-list dt, .delete-list dt {
   background: #342e26;
   padding: 0.2rem;
 }
-.details-list dd {
+.details-list dd, .delete-list dd {
   padding-left: 0.2rem;
 }
 
@@ -257,6 +257,10 @@ table tr td:last-child {
     box-shadow: 0 2px 0 #8d240b;
     background: #fc451a;
   }
+}
+
+#registerForm button {
+  width: 100%;
 }
 
 footer {

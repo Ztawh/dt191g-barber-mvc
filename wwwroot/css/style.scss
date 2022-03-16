@@ -33,7 +33,7 @@ main {
   min-height: 80vh;
   //max-width: 800px;
   margin: auto;
-  padding: 3rem 0.5rem;
+  padding: 2rem 0.5rem;
   
   @include desktop {
     width: 750px;
@@ -320,14 +320,14 @@ table {
 }
 
 // edit
-.edit-form {
+.edit-form, .create-form {
   .btn {
     margin-top: 1rem;
   }
 }
 
 // details
-.details-list {
+.details-list, .delete-list {
   dt {
     background: $brown;
     padding: 0.2rem;
@@ -354,6 +354,13 @@ table {
         background: $danger-bright;
       }
     }
+  }
+}
+
+// registrera användare
+#registerForm {
+  button {
+    width: 100%;
   }
 }
 
