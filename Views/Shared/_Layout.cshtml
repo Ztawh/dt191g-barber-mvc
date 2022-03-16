@@ -11,39 +11,61 @@
     @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/> *@
     <link rel="stylesheet" href="~/css/style.css"/>
     <link rel="stylesheet" href="~/barber_mvc.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+<div class="container">
 <header>
-    <nav>
+    <nav class="user-nav">
         @if (SignInManager.IsSignedIn(User))
         {
-            <ul>
-                <li>
-                    <a asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Customer" asp-action="Index">Kunder</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Barber" asp-action="Index">Barberare</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Appointment" asp-action="Index">Bokade tider</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Service" asp-action="Index">Tjänster</a>
-                </li>
-                
-            </ul>
+        @*     <ul> *@
+        @*         <li> *@
+        @*             <a asp-area="" asp-controller="Customer" asp-action="Index">Kunder</a> *@
+        @*         </li> *@
+        @*         <li> *@
+        @*             <a asp-area="" asp-controller="Barber" asp-action="Index">Barberare</a> *@
+        @*         </li> *@
+        @*         <li> *@
+        @*             <a asp-area="" asp-controller="Appointment" asp-action="Index">Bokade tider</a> *@
+        @*         </li> *@
+        @*         <li> *@
+        @*             <a asp-area="" asp-controller="Service" asp-action="Index">Tjänster</a> *@
+        @*         </li> *@
+        @*          *@
+        @*     </ul> *@
+            <partial name="_LoginPartial"/>
         }
-        <partial name="_LoginPartial"/>
     </nav>
-    
 </header>
-<div class="container">
+<div class="flex">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a asp-area="" asp-controller="Customer" asp-action="Index">Kunder</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Barber" asp-action="Index">Barberare</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Appointment" asp-action="Index">Bokade tider</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Service" asp-action="Index">Tjänster</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </aside>
+    }
     <main role="main">
+        <h1>Barberar'n - admin</h1>
         @RenderBody()
     </main>
+</div>
 </div>
 
 <footer>

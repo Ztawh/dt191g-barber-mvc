@@ -15,16 +15,29 @@ body {
 
 h1 {
   font-family: "Playfair Display SC", serif;
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem 0;
 }
 
 h2, h3, h4 {
   font-family: "Cantarell", sans-serif;
 }
 
+.container {
+  max-width: 1920px;
+  margin: auto;
+}
+
 main {
   min-height: 80vh;
-  max-width: 800px;
+  //max-width: 800px;
   margin: auto;
+  padding: 3rem 0.5rem;
+  
+  @include desktop {
+    width: 750px;
+  }
 }
 
 a {
@@ -37,14 +50,59 @@ a {
   }
 }
 
+.flex {
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+aside {
+  background: $brown;
+  padding: 1rem;
+  //height: 100%;
+  
+  ul {
+    list-style-type: none;
+    
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+.btn {
+  display: block;
+  background: $accent;
+  color: black;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 5px 0 $accent-dull;
+  transition: 0.2s;
+
+  @include desktop {
+    &:hover {
+      box-shadow: 0 2px 0 $accent-dull;
+      background: $accent-bright;
+      cursor: pointer;
+    }
+
+  }
+}
+
 // home
 .home {
-  
   h1 {
-    text-align: center;
     font-size: 4rem;
-    padding: 2rem 0;
-    
   }
   .welcome {
     font-size: 1.1rem;
@@ -54,54 +112,247 @@ a {
     padding: 2rem;
     border-radius: 20px;
     
-    
-    
     .login-container {
       width: fit-content;
       margin: 2rem auto 0 auto;
       a {
-        display: block;
-        font-size: 1.5rem;
-        background: $accent;
+        font-size: 1.2rem;
         color: black;
-        padding: 1rem;
-        border-radius: 20px;
         text-decoration: none;
-        box-shadow: 0 8px 0 $accent-dull;
-        transition: 0.2s;
-        
-        
-        @include desktop {
-          &:hover {
-            box-shadow: 0 6px 0 $accent-dull;
-            background: $accent-bright;
-          }
-          
-        }
       }
-      
     }
   }
 }
 
 // login 
-.login {
-  h1 {
-    text-align: center;
+//.login {
+//  h1 {
+//    text-align: center;
+//    font-size: 4rem;
+//    padding: 2rem 0;
+//  }
+//}
+
+// Användar-nav
+.user-nav {
+  background: $accent-dull;
+  padding: 0.5rem;
+  
+  ul {
+    list-style-type: none;
   }
+  
+  li {
+    margin: 0 0.5rem;
+  }
+  
+  a {
+    color: black;
+    padding: 0.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  
   form {
-    background:$brown;
-    max-width: 500px;
-    margin: auto;
-    padding: 2rem;
-    border-radius: 20px;
+    background: unset;
+    border-radius: unset;
+    padding: 0;
     
+    button {
+      border: none;
+      background: unset;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+  }
+  
+  @include desktop {
+    a:hover, button:hover {
+      color: $nature-white;
+      cursor: pointer;
+    }
+  }
+}
+
+// formulär
+form {
+  background:$brown;
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 20px;
+
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .checkbox {
     input {
-      display: block;
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      
+      //display: inline-block;
+      @include desktop {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  .btn-submit {
+    padding: 0.5rem;
+    margin: 1rem 0 1rem auto;
+    font-size: 1.1rem;
+  }
+}
+
+// tabeller
+table {
+  //background: $brown;
+  //padding: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+  -webkit-border-horizontal-spacing: 0;
+
+  th {
+    text-align: left;
+    //font-family: 'Mulish', sans-serif;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    background: $brown;
+    padding: 0.5rem 0;
+    
+    &:nth-child(1){
+      padding-left: 0.5rem;
+    }
+
+    //@include tablet {
+    //  display: none;
+    //}
+  }
+
+  tr {
+    //@include tablet {
+    //  margin-bottom: 2rem;
+    //  display: block;
+    //
+    //}
+    
+    &:nth-child(even){
+      background: $brown;
+    }
+
+    td {
+      //border-top: solid 1px $nature-white;
+      padding: 0.5rem 0.1rem 0.5rem 0;
+
+      //@include desktop {
+      //  &:first-child {
+      //    max-width: 100px;
+      //  }
+      //}
+
+      //@include tablet {
+      //  display: block;
+      //  padding-left: 1rem;
+      //
+      //  &:first-child{
+      //    background: $btn-color;
+      //    font-size: 1.5rem;
+      //    border-top: none;
+      //    position: relative;
+      //
+      //  }
+      //
+      //  &:nth-child(2){
+      //    border-top: none;
+      //  }
+      //}
+
+      &:nth-child(1){
+        padding-left: 0.5rem;
+      }
+    }
+
+    td:last-child{
+      text-align: right;
+      padding-right: 0.5rem;
+    }
+  }
+  
+}
+
+// sökfält
+.search-form {
+  background: unset;
+  border-radius: unset;
+  padding: 0;
+  max-width: unset;
+  margin-top: 2rem;
+  
+  .search {
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .search-btn {
+    width: 100px;
+    padding: 0.4rem;
+    margin: 0;
+    box-shadow: unset;
+    
+    @include desktop {
+      &:hover {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+  
+  .all-customers {
+    width: auto;
+    margin-left: 0.5rem;
+  }
+}
+
+// edit
+.edit-form {
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+// details
+.details-list {
+  dt {
+    background: $brown;
+    padding: 0.2rem;
+  }
+  
+  dd {
+    padding-left: 0.2rem;
+  }
+}
+
+// Delete
+.delete-form {
+  background: unset;
+  border-radius: unset;
+  .btn-danger {
+    background: $danger;
+    box-shadow: 0 5px 0 $danger-dark;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    
+    @include desktop {
+      &:hover {
+        box-shadow: 0 2px 0 $danger-dark;
+        background: $danger-bright;
+      }
     }
   }
 }

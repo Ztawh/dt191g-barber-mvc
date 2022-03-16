@@ -1,15 +1,15 @@
 @model IEnumerable<barber_mvc.Models.Service>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tjänster";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h2>Tjänster</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div>
+    <a asp-action="Create">Ny tjänst</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -38,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.ServicePrice)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ServiceId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ServiceId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ServiceId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ServiceId">Redigera</a> |
+                <a asp-action="Details" asp-route-id="@item.ServiceId">Detaljer</a> |
+                <a asp-action="Delete" asp-route-id="@item.ServiceId">Radera</a>
             </td>
         </tr>
 }

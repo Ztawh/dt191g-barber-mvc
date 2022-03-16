@@ -14,20 +14,33 @@ body {
 
 h1 {
   font-family: "Playfair Display SC", serif;
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem 0;
 }
 
 h2, h3, h4 {
   font-family: "Cantarell", sans-serif;
 }
 
-main {
-  min-height: 80vh;
-  max-width: 800px;
+.container {
+  max-width: 1920px;
   margin: auto;
 }
 
+main {
+  min-height: 80vh;
+  margin: auto;
+  padding: 3rem 0.5rem;
+}
+@media screen and (min-width: 800px) {
+  main {
+    width: 750px;
+  }
+}
+
 a {
-  color: #e2b044;
+  color: #eeba4c;
 }
 @media screen and (min-width: 800px) {
   a:hover {
@@ -35,10 +48,51 @@ a {
   }
 }
 
-.home h1 {
+.flex {
+  display: flex;
+}
+
+.center {
   text-align: center;
+}
+
+aside {
+  background: #342e26;
+  padding: 1rem;
+}
+aside ul {
+  list-style-type: none;
+}
+aside ul li {
+  margin: 0.5rem 0;
+}
+aside a {
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: block;
+  background: #eeba4c;
+  color: black;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 5px 0 #ac9158;
+  transition: 0.2s;
+}
+@media screen and (min-width: 800px) {
+  .btn:hover {
+    box-shadow: 0 2px 0 #ac9158;
+    background: #ffb81f;
+    cursor: pointer;
+  }
+}
+
+.home h1 {
   font-size: 4rem;
-  padding: 2rem 0;
 }
 .home .welcome {
   font-size: 1.1rem;
@@ -53,38 +107,156 @@ a {
   margin: 2rem auto 0 auto;
 }
 .home .welcome .login-container a {
-  display: block;
-  font-size: 1.5rem;
-  background: #e2b044;
+  font-size: 1.2rem;
   color: black;
-  padding: 1rem;
-  border-radius: 20px;
   text-decoration: none;
-  box-shadow: 0 8px 0 #ac9158;
+}
+
+.user-nav {
+  background: #ac9158;
+  padding: 0.5rem;
+}
+.user-nav ul {
+  list-style-type: none;
+}
+.user-nav li {
+  margin: 0 0.5rem;
+}
+.user-nav a {
+  color: black;
+  padding: 0.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.user-nav form {
+  background: unset;
+  border-radius: unset;
+  padding: 0;
+}
+.user-nav form button {
+  border: none;
+  background: unset;
+  font-size: 1rem;
+  font-weight: bold;
   transition: 0.2s;
 }
 @media screen and (min-width: 800px) {
-  .home .welcome .login-container a:hover {
-    box-shadow: 0 6px 0 #ac9158;
-    background: #ffb81f;
+  .user-nav a:hover, .user-nav button:hover {
+    color: #f5f2ea;
+    cursor: pointer;
   }
 }
 
-.login h1 {
-  text-align: center;
-}
-.login form {
+form {
   background: #342e26;
   max-width: 500px;
   margin: auto;
   padding: 2rem;
   border-radius: 20px;
 }
-.login form input {
+form input {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.5rem;
+}
+@media screen and (min-width: 800px) {
+  form .checkbox input:hover {
+    cursor: pointer;
+  }
+}
+form .btn-submit {
+  padding: 0.5rem;
+  margin: 1rem 0 1rem auto;
+  font-size: 1.1rem;
+}
+
+table {
+  width: 100%;
+  margin-top: 2rem;
+  -webkit-border-horizontal-spacing: 0;
+}
+table th {
+  text-align: left;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  background: #342e26;
+  padding: 0.5rem 0;
+}
+table th:nth-child(1) {
+  padding-left: 0.5rem;
+}
+table tr:nth-child(even) {
+  background: #342e26;
+}
+table tr td {
+  padding: 0.5rem 0.1rem 0.5rem 0;
+}
+table tr td:nth-child(1) {
+  padding-left: 0.5rem;
+}
+table tr td:last-child {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.search-form {
+  background: unset;
+  border-radius: unset;
+  padding: 0;
+  max-width: unset;
+  margin-top: 2rem;
+}
+.search-form .search {
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+.search-form .search-btn {
+  width: 100px;
+  padding: 0.4rem;
+  margin: 0;
+  box-shadow: unset;
+}
+@media screen and (min-width: 800px) {
+  .search-form .search-btn:hover {
+    font-weight: bold;
+    color: black;
+  }
+}
+.search-form .all-customers {
+  width: auto;
+  margin-left: 0.5rem;
+}
+
+.edit-form .btn {
+  margin-top: 1rem;
+}
+
+.details-list dt {
+  background: #342e26;
+  padding: 0.2rem;
+}
+.details-list dd {
+  padding-left: 0.2rem;
+}
+
+.delete-form {
+  background: unset;
+  border-radius: unset;
+}
+.delete-form .btn-danger {
+  background: #ea5431;
+  box-shadow: 0 5px 0 #8d240b;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 800px) {
+  .delete-form .btn-danger:hover {
+    box-shadow: 0 2px 0 #8d240b;
+    background: #fc451a;
+  }
 }
 
 footer {

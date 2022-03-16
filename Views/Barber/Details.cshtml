@@ -1,37 +1,35 @@
 @model barber_mvc.Models.Barber
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detaljer om barberare";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h2 class="center">Detaljer om barberare</h2>
 
-<div>
-    <h4>Barber</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
+<div class="details-list">
+    <dl>
+        <dt>
             @Html.DisplayNameFor(model => model.BarberName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd>
             @Html.DisplayFor(model => model.BarberName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt>
             @Html.DisplayNameFor(model => model.Role)
         </dt>
-        <dd class = "col-sm-10">
+        <dd>
             @Html.DisplayFor(model => model.Role)
         </dd>
-        <dt class = "col-sm-2">
+        <dt>
             @Html.DisplayNameFor(model => model.PayRate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd>
             @Html.DisplayFor(model => model.PayRate)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.BarberId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.BarberId">Redigera</a> |
+    <a asp-action="Index">Tillbaka</a>
 </div>

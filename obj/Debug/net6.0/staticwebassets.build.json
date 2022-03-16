@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iZJgPIi9oGeh7wtD9RU99a1tGo5cwvXdKnVaPS234j8=",
+  "Hash": "aAiPt1nZT8VqVElBz65WEbBNdI1WRXfbz3MWjTV8/Y4=",
   "Source": "barber-mvc",
   "BasePath": "_content/barber-mvc",
   "Mode": "Default",
@@ -1188,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/site.js"
+    },
+    {
+      "Identity": "/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/wwwroot/lib/.DS_Store",
+      "SourceId": "barber-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/wwwroot/",
+      "BasePath": "_content/barber-mvc",
+      "RelativePath": "lib/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/.DS_Store"
     },
     {
       "Identity": "/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",

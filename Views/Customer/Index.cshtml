@@ -1,22 +1,25 @@
 @model IEnumerable<barber_mvc.Models.Customer>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Kunder";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h2>Kundregister</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div>
+    <a asp-action="Create">Ny kund</a>
+</div>
 
-<form asp-controller="Customer" asp-action="Index">
-    <p>
-        Title: <input type="text" name="SearchString" />
-        <input type="submit" value="Filtrera" />
-        <a asp-controller="Customer" asp-action="Index">Alla kunder</a>
-    </p>
+<form class="search-form" asp-controller="Customer" asp-action="Index">
+    <div>
+        <div class="flex">
+            Sök <input class="search" type="text" name="SearchString"/>
+            <input class="btn search-btn" type="submit" value="Filtrera"/>
+            <a class="all-customers btn search-btn" asp-controller="Customer" asp-action="Index"><i class="fa-solid fa-arrows-rotate"></i></a>
+        </div>
+        
+    </div>
 </form>
 
 <table class="table">
@@ -41,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CustomerId">Redigera</a> |
+                <a asp-action="Details" asp-route-id="@item.CustomerId">Detaljer</a> |
+                <a asp-action="Delete" asp-route-id="@item.CustomerId">Radera</a>
             </td>
         </tr>
 }
