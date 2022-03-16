@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Dosis:wght@300;500&family=Mulish:wght@300;400&family=Playfair+Display+SC:wght@400;700&family=Rokkitt:wght@300;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  background: #1d1a16;
+  font-family: "Dosis", sans-serif;
+  color: #f5f2ea;
+}
+
+h1 {
+  font-family: "Playfair Display SC", serif;
+}
+
+h2, h3, h4 {
+  font-family: "Cantarell", sans-serif;
+}
+
+main {
+  min-height: 80vh;
+  max-width: 800px;
+  margin: auto;
+}
+
+a {
+  color: #e2b044;
+}
+@media screen and (min-width: 800px) {
+  a:hover {
+    color: #ffb81f;
+  }
+}
+
+.home h1 {
+  text-align: center;
+  font-size: 4rem;
+  padding: 2rem 0;
+}
+.home .welcome {
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: auto;
+  background: #342e26;
+  padding: 2rem;
+  border-radius: 20px;
+}
+.home .welcome .login-container {
+  width: fit-content;
+  margin: 2rem auto 0 auto;
+}
+.home .welcome .login-container a {
+  display: block;
+  font-size: 1.5rem;
+  background: #e2b044;
+  color: black;
+  padding: 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 0 8px 0 #ac9158;
+  transition: 0.2s;
+}
+@media screen and (min-width: 800px) {
+  .home .welcome .login-container a:hover {
+    box-shadow: 0 6px 0 #ac9158;
+    background: #ffb81f;
+  }
+}
+
+.login h1 {
+  text-align: center;
+}
+.login form {
+  background: #342e26;
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 20px;
+}
+.login form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  color: #f5f2ea;
+  padding: 3rem 0;
+}
+
+/*# sourceMappingURL=style.css.map */
