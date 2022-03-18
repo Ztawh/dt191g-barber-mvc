@@ -25,7 +25,7 @@ namespace barber_mvc.Controllers
         // GET: Barber
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Barber.ToListAsync());
+            return View(await _context.Barber.OrderBy(m => m.BarberName).ToListAsync());
         }
 
         // GET: Barber/Details/5

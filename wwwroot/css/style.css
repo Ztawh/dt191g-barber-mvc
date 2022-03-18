@@ -56,6 +56,13 @@ a {
   text-align: center;
 }
 
+.text-danger {
+  color: #ea5431;
+}
+.text-danger span {
+  color: #ea5431;
+}
+
 aside {
   background: #342e26;
   padding: 1rem;

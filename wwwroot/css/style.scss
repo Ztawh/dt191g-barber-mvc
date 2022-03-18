@@ -54,8 +54,17 @@ a {
   display: flex;
 }
 
+// Centrera vissa h2
 .center {
   text-align: center;
+}
+
+// Felmeddelanden
+.text-danger {
+  color: $danger;
+  span {
+    color: $danger;
+  }
 }
 
 aside {
