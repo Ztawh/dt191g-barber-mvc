@@ -22,6 +22,65 @@ namespace barber_mvc.Controllers
             _context = context;
         }
 
+        // GET: Available dates
+        // public async Task<IActionResult> Available(int add, int barber)
+        // {
+        //      
+        //     var dateStart = DateTime.Now;
+        //     var dateEnd = dateStart.AddDays(7);
+        //
+        //     if (add > 0)
+        //     {
+        //         dateStart = DateTime.Now.AddDays(add);
+        //         dateEnd = dateStart.AddDays(7);
+        //     }
+        //     
+        //     var times = new List<DateTime>();
+        //
+        //     var unavailable = await _context.Appointment.Where(appointment =>
+        //         appointment.DateAndTime > dateStart && appointment.DateAndTime < dateEnd && appointment.BarberId == barber).ToListAsync();
+        //
+        //     for (int i = 0; i < 7; i++)
+        //     {
+        //         //dates.Add(dateStart.AddDays(i));
+        //         var day = dateStart.AddDays(i);
+        //
+        //         for (int j = 9; j < 18; j++)
+        //         {
+        //             var dateAndTime = DateTime.Parse($"{day.Year}-{day.Month:00}-{day.Day:00}T{j:00}:00");
+        //
+        //             // Om det finns bokade tider
+        //             if (unavailable.Count > 0)
+        //             {
+        //                 bool found = false;
+        //                 foreach (var appointment in unavailable)
+        //                 {
+        //                     // Finns datumet i bokade tider?
+        //                     if (appointment.DateAndTime == dateAndTime)
+        //                     {
+        //                         found = true;
+        //                         break;
+        //                         // times.Add(dateAndTime);
+        //                     }
+        //                 }
+        //                 
+        //                 // Om den fanns 
+        //                 if (!found)
+        //                 {
+        //                     times.Add(dateAndTime);
+        //                 }
+        //             }
+        //             else // Lägg till alla tider
+        //             {
+        //                 times.Add(dateAndTime);
+        //             }
+        //         }
+        //     }
+        //     //return times;
+        //
+        //     ViewData["AvailableDates"] = new SelectList(times, "DateAndTime", "DateAndTime");
+        // }
+        
         // GET: Appointment
         public async Task<IActionResult> Index()
         {
@@ -35,6 +94,9 @@ namespace barber_mvc.Controllers
             // var data = await applicationDbContext.ToListAsync();
             //
             // return View(data);
+            
+            
+           
             return View(await applicationDbContext.ToListAsync());
         }
 

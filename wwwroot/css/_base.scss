@@ -14,13 +14,25 @@ $danger-dark: rgb(141, 36, 11);
 
 // Mixins
 @mixin desktop {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin smallTablet {
+  @media screen and (max-width: 700px){
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 500px){
     @content;
   }
 }
