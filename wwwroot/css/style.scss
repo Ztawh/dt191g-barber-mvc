@@ -20,7 +20,8 @@ h1 {
   padding: 2rem 0;
   
   @include mobile {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    padding: 0 0 1rem 0;
   }
 }
 
@@ -58,7 +59,7 @@ a {
   display: flex;
 }
 
-// Centrera vissa h2
+// Centrera vissa h2 och h3
 .center {
   text-align: center;
 }
@@ -77,6 +78,37 @@ a {
   }
 }
 
+// Manage account
+.manage-account-container{
+  max-width: 500px;
+  margin: auto;
+  
+  h3 {
+    margin-top: 1rem;
+  }
+  #download-data {
+    background: unset;
+    padding: 0;
+    width: auto;
+    margin: 0;
+    margin-right: 0.5rem;
+  }
+  
+  .flex {
+    margin-top: 1rem;
+  }
+}
+
+.manage-nav {
+  ul {
+    list-style-position: inside;
+  }
+  
+  
+}
+
+
+// Sidomeny
 aside {
   background: $brown;
   padding: 1rem;
@@ -119,6 +151,8 @@ aside {
   text-decoration: none;
   box-shadow: 0 5px 0 $accent-dull;
   transition: 0.2s;
+  font-family: "Dosis", sans-serif;
+  font-size: 1rem;
 
   @include desktop {
     &:hover {
@@ -408,17 +442,19 @@ table {
 .delete-form {
   background: unset;
   border-radius: unset;
-  .btn-danger {
-    background: $danger;
-    box-shadow: 0 5px 0 $danger-dark;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    
-    @include desktop {
-      &:hover {
-        box-shadow: 0 2px 0 $danger-dark;
-        background: $danger-bright;
-      }
+}
+
+// Radera-knappar
+.btn-danger {
+  background: $danger;
+  box-shadow: 0 5px 0 $danger-dark;
+  color: black;
+
+  @include desktop {
+    &:hover {
+      box-shadow: 0 2px 0 $danger-dark;
+      background: $danger-bright;
+      color: black;
     }
   }
 }

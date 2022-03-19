@@ -20,7 +20,8 @@ h1 {
 }
 @media screen and (max-width: 500px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    padding: 0 0 1rem 0;
   }
 }
 
@@ -74,6 +75,28 @@ a {
   }
 }
 
+.manage-account-container {
+  max-width: 500px;
+  margin: auto;
+}
+.manage-account-container h3 {
+  margin-top: 1rem;
+}
+.manage-account-container #download-data {
+  background: unset;
+  padding: 0;
+  width: auto;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+.manage-account-container .flex {
+  margin-top: 1rem;
+}
+
+.manage-nav ul {
+  list-style-position: inside;
+}
+
 aside {
   background: #342e26;
   padding: 1rem;
@@ -115,6 +138,8 @@ aside a {
   text-decoration: none;
   box-shadow: 0 5px 0 #ac9158;
   transition: 0.2s;
+  font-family: "Dosis", sans-serif;
+  font-size: 1rem;
 }
 @media screen and (min-width: 900px) {
   .btn:hover {
@@ -330,16 +355,17 @@ table tr td:last-child {
   background: unset;
   border-radius: unset;
 }
-.delete-form .btn-danger {
+
+.btn-danger {
   background: #ea5431;
   box-shadow: 0 5px 0 #8d240b;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  color: black;
 }
 @media screen and (min-width: 900px) {
-  .delete-form .btn-danger:hover {
+  .btn-danger:hover {
     box-shadow: 0 2px 0 #8d240b;
     background: #fc451a;
+    color: black;
   }
 }
 
