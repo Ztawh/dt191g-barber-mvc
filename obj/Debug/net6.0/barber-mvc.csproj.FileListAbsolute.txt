@@ -305,3 +305,8 @@
 /Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/public/web.config
+/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/public/appsettings.Development.json
+/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/public/appsettings.json
+/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/public/barber-mvc.deps.json
+/Users/amanda/Documents/WebbutvecklingMIUN/RiderProjects/barber-mvc/bin/Debug/net6.0/public/barber-mvc.runtimeconfig.json

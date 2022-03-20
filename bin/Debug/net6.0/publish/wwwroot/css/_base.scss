@@ -1,0 +1,38 @@
+// Typsnitt
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Dosis:wght@300;500&family=Mulish:wght@300;400&family=Playfair+Display+SC:wght@400;700&family=Rokkitt:wght@300;500&display=swap');
+// Variabler
+$brown: #342e26;
+$brown-dark: #1d1a16;
+$nature-white: #f5f2ea;
+// $btn-color: rgb(187, 143, 48);
+$accent: rgb(238, 186, 76);
+$accent-bright: rgb(255, 184, 31);
+$accent-dull: rgb(172, 145, 88);
+$danger: rgb(234, 84, 49);
+$danger-bright: rgb(252, 69, 26);
+$danger-dark: rgb(141, 36, 11);
+
+// Mixins
+@mixin desktop {
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin smallTablet {
+  @media screen and (max-width: 700px){
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 500px){
+    @content;
+  }
+}
