@@ -34,7 +34,6 @@ namespace barber_mvc.Controllers
                 return View(await customers.ToListAsync());
             }
             var customersList = _context.Customer.OrderBy(m => m.CustomerName);
-            // return View(await _context.Customer.ToListAsync());
             return View(await customersList.ToListAsync());
         }
 

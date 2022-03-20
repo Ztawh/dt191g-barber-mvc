@@ -36,7 +36,6 @@ h2, h3, h4 {
 
 main {
   min-height: 80vh;
-  //max-width: 800px;
   margin: auto;
   padding: 2rem 0.5rem;
   
@@ -103,10 +102,7 @@ a {
   ul {
     list-style-position: inside;
   }
-  
-  
 }
-
 
 // Sidomeny
 aside {
@@ -160,13 +156,11 @@ aside {
       background: $accent-bright;
       cursor: pointer;
     }
-
   }
 }
 
 // home
 .home {
-  
   .welcome {
     font-size: 1.1rem;
     max-width: 500px;
@@ -189,15 +183,6 @@ aside {
     }
   }
 }
-
-// login 
-//.login {
-//  h1 {
-//    text-align: center;
-//    font-size: 4rem;
-//    padding: 2rem 0;
-//  }
-//}
 
 // Användar-nav (inloggad användare, logga ut, registrera)
 .user-nav {
@@ -298,15 +283,12 @@ form {
 
 // tabeller
 table {
-  //background: $brown;
-  //padding: 1rem;
   width: 100%;
   margin-top: 2rem;
   -webkit-border-horizontal-spacing: 0;
 
   th {
     text-align: left;
-    //font-family: 'Mulish', sans-serif;
     font-size: 1rem;
     margin-right: 0.5rem;
     background: $brown;
@@ -322,25 +304,12 @@ table {
   }
 
   tr {
-    //@include tablet {
-    //  margin-bottom: 2rem;
-    //  display: block;
-    //
-    //}
-    
     &:nth-child(even){
       background: $brown;
     }
 
     td {
-      //border-top: solid 1px $nature-white;
       padding: 0.5rem 0.1rem 0.5rem 0;
-
-      //@include desktop {
-      //  &:first-child {
-      //    max-width: 100px;
-      //  }
-      //}
 
       @include smallTablet {
         display: block;
@@ -356,20 +325,6 @@ table {
           font-weight: bold;
           margin-right: 5px;
         }
-        
-        
-
-        //&:first-child{
-        //  background: $btn-color;
-        //  font-size: 1.5rem;
-        //  border-top: none;
-        //  position: relative;
-        //
-        //}
-        //
-        //&:nth-child(2){
-        //  border-top: none;
-        //}
       }
 
       &:nth-child(1){
