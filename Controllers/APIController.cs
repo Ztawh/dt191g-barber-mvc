@@ -13,7 +13,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace barber_mvc.Controllers
 {
-    // [Route("api/[controller]")]
     [ApiController]
     public class APIController : ControllerBase
     {
@@ -46,15 +45,17 @@ namespace barber_mvc.Controllers
             }
             
             var times = new List<DateTime>();
-
             var unavailable = await _context.Appointment.Where(appointment =>
-                appointment.DateAndTime > dateStart && appointment.DateAndTime < dateEnd && appointment.BarberId == barber).ToListAsync();
+                appointment.DateAndTime > dateStart 
+                && appointment.DateAndTime < dateEnd 
+                && appointment.BarberId == barber).ToListAsync();
 
             for (int i = 0; i < 7; i++)
             {
-                //dates.Add(dateStart.AddDays(i));
+                // En dag i veckan
                 var day = dateStart.AddDays(i);
 
+                // Gå igenom varje tid 09:00-17:00
                 for (int j = 9; j < 18; j++)
                 {
                     var dateAndTime = DateTime.Parse($"{day.Year}-{day.Month:00}-{day.Day:00}T{j:00}:00");
@@ -65,16 +66,15 @@ namespace barber_mvc.Controllers
                         bool found = false;
                         foreach (var appointment in unavailable)
                         {
-                            // Finns datumet i bokade tider?
+                            // Är tiden bokad? Gör ingenting
                             if (appointment.DateAndTime == dateAndTime)
                             {
                                 found = true;
                                 break;
-                                // times.Add(dateAndTime);
                             }
                         }
                         
-                        // Om den fanns 
+                        // Om den inte var bokad, lägg till den i listan
                         if (!found)
                         {
                             times.Add(dateAndTime);
