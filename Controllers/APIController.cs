@@ -89,14 +89,6 @@ namespace barber_mvc.Controllers
             return times;
         }
 
-        // GET: API/Appointment/{id}
-        [HttpGet]
-        [Route("/API/Appointment/{id}")]
-        public async Task<List<Appointment>> Get(int id)
-        {
-            return await _context.Appointment.ToListAsync();
-        }
-        
         // POST
         [HttpPost]
         [Route("/API/Appointment")]
@@ -114,14 +106,7 @@ namespace barber_mvc.Controllers
         {
             return await _context.Customer.ToListAsync();
         }
-        
-        // GET: API/Customer/{id}
-        [Route("/API/Customer/{id}")]
-        public async Task<List<Customer>> GetCustomer(int id)
-        {
-            return await _context.Customer.ToListAsync();
-        }
-        
+
         // POST Customer
         [HttpPost]
         [Route("/API/Customer")]
@@ -139,15 +124,7 @@ namespace barber_mvc.Controllers
         {
             return await _context.Barber.ToListAsync();
         }
-        
-        // GET: API/Barber/{id}
-        [HttpGet]
-        [Route("/API/Barber/{id}")]
-        public async Task<List<Barber>> GetBarber(int id)
-        {
-            return await _context.Barber.ToListAsync();
-        }
-        
+
         // GET: API/Service
         [HttpGet]
         [Route("/API/Service")]
@@ -155,14 +132,5 @@ namespace barber_mvc.Controllers
         {
             return await _context.Service.ToListAsync();
         }
-        
-        // GET: API/Service/{id}
-        [Route("/API/Service/{id}")]
-        public async Task<List<Service>> GetService(int id)
-        {
-            return await _context.Service.ToListAsync();
-        }
-
-
     }
 }
